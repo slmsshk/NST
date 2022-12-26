@@ -63,7 +63,7 @@ with col2:
         cv2.imwrite(img=cv2.cvtColor(np.array(sty),cv2.COLOR_RGB2BGR),filename='st.jpg') #Save the file
         cv2.imwrite(img=cv2.cvtColor(np.array(sty),cv2.COLOR_RGB2BGR),filename='s'+style_file.name)
 
-UI.write('Neural Style transfer image')
+UI.write('Neural Style transfer image',tag='h1',fontsize=35,bg='orange',color='white')
 
 but=st.button('press me for Style transfer')
 
