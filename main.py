@@ -11,6 +11,10 @@ import time,os
 # Page setup
 # ==========================================
 st.write(os.listdir())
+if 'im.jpg' and 'st.jpg' in os.listdir():
+    os.remove('im.jpg')
+    os.remove('st.jpg')
+
 UI.add_bg_from_local('Style Background.jpg')
 
 UI.write("NST-Neural Styles Transfer",tag='h1',bg='maroon',fontsize=30)
