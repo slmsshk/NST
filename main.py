@@ -65,7 +65,7 @@ with col2:
 
 UI.write('Neural Style transfer image',tag='h1',fontsize=35,bg='orange',color='white')
 
-but=st.button('press me for Style transfer')
+but=st.button('press for Style transfer')
 
 if but:
     try:
