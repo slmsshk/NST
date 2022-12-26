@@ -10,10 +10,18 @@ import time,os
 # ++++++++++++++++++++++++++++++++++++++
 # Page setup
 # ==========================================
-st.write(os.listdir())
-if 'im.jpg' and 'st.jpg' in os.listdir():
-    os.remove('im.jpg')
-    os.remove('st.jpg')
+
+reset=st.button('click to reset and start fresh')
+
+
+if reset:
+    # os.remove('style.png')
+    try:
+        os.remove('st.jpg')
+        os.remove('im.jpg')
+        os.remove('final.jpg')
+    except:
+        print(':)')
 
 UI.add_bg_from_local('Style Background.jpg')
 
@@ -60,19 +68,17 @@ UI.write('Neural Style transfer image')
 but=st.button('press me for Style transfer')
 
 if but:
-    import sty
-    time.sleep(10)
-    st.image('final.jpg')
-    
-try:
-    with open("final.jpg", "rb") as file:
-        btn = st.download_button(
-                label="Download image",
-                data=file,
-                file_name="style.png",
-                mime="image/png"
-            )
-except:
-    st.write(':)')
+    try:
+        import sty
+        st.image('final.jpg')
+        
 
-UI.write('RESTART THE PAGE FOR NEW IMAGE')
+        with open("final.jpg", "rb") as file:
+            btn = st.download_button(
+                    label="Download image",
+                    data=file,
+                    file_name="style.png",
+                    mime="image/png"
+                )
+    except:
+        st.write(':)')
