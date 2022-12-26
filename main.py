@@ -38,7 +38,7 @@ with col1:
         img = Image.open(image_file)
         col1.image(img) #Display the image
         cv2.imwrite(img=cv2.cvtColor(np.array(img),cv2.COLOR_RGB2BGR),filename='im.jpg') #Save the file
-
+        cv2.imwrite(img=cv2.cvtColor(np.array(img),cv2.COLOR_RGB2BGR),filename='i'+image_file.name)
 
 
 with col2:
@@ -53,6 +53,7 @@ with col2:
         sty = Image.open(style_file)
         col2.image(sty) #Display the image
         cv2.imwrite(img=cv2.cvtColor(np.array(sty),cv2.COLOR_RGB2BGR),filename='st.jpg') #Save the file
+        cv2.imwrite(img=cv2.cvtColor(np.array(sty),cv2.COLOR_RGB2BGR),filename='s'+style_file.name)
 
 UI.write('Neural Style transfer image')
 
