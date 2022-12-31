@@ -81,4 +81,4 @@ if but:
                     mime="image/png"
                 )
     except:
-        st.write(':)')
+        st.write(';)')
