@@ -7,21 +7,36 @@ import tensorflow as tf
 import numpy as np
 
 import time,os
+
+
 # ++++++++++++++++++++++++++++++++++++++
-# Page setup
+# Clean Ram
 # ==========================================
 
 reset=st.button('click to reset and start fresh')
 
-
 if reset:
     # os.remove('style.png')
     try:
-        os.remove('st.jpg')
-        os.remove('im.jpg')
-        os.remove('final.jpg')
+        os.remove("st.jpg")
+        UI.write('done1 st',tag='p',padding=1,bg='green')
+        os.remove("im.jpg")
+        UI.write('done2 im',tag='p',padding=1,bg='green')
+        os.remove("final.jpg")
+        UI.write('done',tag='p',padding=1,bg='green')
     except:
-        print(':)')
+        UI.write(':)',tag='p',padding=1,bg='yellow')
+        
+refresh=st.button('refresh')
+
+if refresh:
+    st.experimental_rerun()
+
+
+# ++++++++++++++++++++++++++++++++++++++
+# Page setup
+# ==========================================
+
 
 UI.add_bg_from_local('Style Background.jpg')
 
@@ -44,9 +59,9 @@ with col1:
         # col1.write(image_file.name)
         # Open St format to Image format
         img = Image.open(image_file)
-        col1.image(img) #Display the image
+        # col1.image(img) #Display the image
         cv2.imwrite(img=cv2.cvtColor(np.array(img),cv2.COLOR_RGB2BGR),filename='im.jpg') #Save the file
-        cv2.imwrite(img=cv2.cvtColor(np.array(img),cv2.COLOR_RGB2BGR),filename='i'+image_file.name)
+        # cv2.imwrite(img=cv2.cvtColor(np.array(img),cv2.COLOR_RGB2BGR),filename='i'+image_file.name)
 
 
 with col2:
@@ -59,9 +74,9 @@ with col2:
         # col1.write(image_file.name)
         # Open St format to Image format
         sty = Image.open(style_file)
-        col2.image(sty) #Display the image
+        # col2.image(sty) #Display the image
         cv2.imwrite(img=cv2.cvtColor(np.array(sty),cv2.COLOR_RGB2BGR),filename='st.jpg') #Save the file
-        cv2.imwrite(img=cv2.cvtColor(np.array(sty),cv2.COLOR_RGB2BGR),filename='s'+style_file.name)
+        # cv2.imwrite(img=cv2.cvtColor(np.array(sty),cv2.COLOR_RGB2BGR),filename='s'+style_file.name)
 
 UI.write('Neural Style transfer image',tag='h1',fontsize=35,bg='orange',color='white')
 
