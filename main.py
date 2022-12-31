@@ -61,22 +61,22 @@ with col1:
         img = Image.open(image_file)
         # col1.image(img) #Display the image
         cv2.imwrite(img=cv2.cvtColor(np.array(img),cv2.COLOR_RGB2BGR),filename='im.jpg') #Save the file
-        # cv2.imwrite(img=cv2.cvtColor(np.array(img),cv2.COLOR_RGB2BGR),filename='i'+image_file.name)
-
+        cv2.imwrite(img=cv2.cvtColor(np.array(img),cv2.COLOR_RGB2BGR),filename='i'+image_file.name)
+        
 
 with col2:
     
     UI.write('Upload Style photo',bg='green',fontsize=20,tag='h2')
-    style_file = st.file_uploader(" ",type=['jpg'],key='style')
+    style_file = st.file_uploader("Close the file after Upload",type=['jpg'],key='style')
 
     if style_file is not None:
 
         # col1.write(image_file.name)
         # Open St format to Image format
         sty = Image.open(style_file)
-        # col2.image(sty) #Display the image
+        col2.image(sty) #Display the image
         cv2.imwrite(img=cv2.cvtColor(np.array(sty),cv2.COLOR_RGB2BGR),filename='st.jpg') #Save the file
-        # cv2.imwrite(img=cv2.cvtColor(np.array(sty),cv2.COLOR_RGB2BGR),filename='s'+style_file.name)
+        cv2.imwrite(img=cv2.cvtColor(np.array(sty),cv2.COLOR_RGB2BGR),filename='s'+style_file.name)
 
 UI.write('Neural Style transfer image',tag='h1',fontsize=35,bg='orange',color='white')
 
