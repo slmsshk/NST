@@ -18,7 +18,7 @@ def add_bg_from_local(image_file):
 
 def write(
     value,tag='p',color='red',fontsize=10,fontweight='normal',
-    textalign='center',padding='35px',bg='white' ):
+    textalign='center',padding='35px',bg=None):
 
     """
     Parameters

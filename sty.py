@@ -104,5 +104,4 @@ cv2.imwrite(img=cv2.cvtColor(np.array(i),cv2.COLOR_RGB2BGR),filename='final.jpg'
 # In[9]:
 
 
-i
 
